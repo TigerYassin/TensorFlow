@@ -6,9 +6,9 @@ i broke it down into sections so that you can comment out sections at a time
 
 import tensorflow as tf
 
-state = tf.Variable(0)
+state = tf.Variable([1,2])          # can also use arrays
 
-one = tf.constant(1)
+one = tf.constant([3,2])
 new_value = tf.add(state, one)
 update = tf.assign(state, new_value)
 
@@ -61,7 +61,7 @@ with tf.Session() as sess:
 
 
 
-        
+
 
 
 
@@ -85,4 +85,4 @@ with tf.Session() as sess:            #must instantiate a session
 
 with tf.Session() as what:      #another session, each session stores its own shit
     what.run(init_var)
-    print(what.run(new_val))    # doesn't continue to the from the values the were assigned in the previous session, but instead start everything over
+    print(what.run(new_val))    # doesn't continue off of the values that were assigned in the previous session, but instead started everything over
